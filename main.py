@@ -15,11 +15,11 @@ from faiss_indexer import load_and_index_folder, search_index, create_faiss_inde
 load_dotenv()
 
 # Streamlitのヘッダー
-st.title("質問応答チャットボット（情報システム実験）")
+st.title("質問応答チャットボット（情報ネットワーク工学入門）")
 
 # フォルダのパス
-lecture_folder = "./information-systems-experiment"  # 講義資料フォルダ
-example_folder = "./information-systems-experiment_example"     # 回答例フォルダ
+lecture_folder = "./information-network-engineering"  # 講義資料フォルダ
+example_folder = "./information-network-engineering-example"     # 回答例フォルダ
 log_folder = "./logs"             # 会話ログ保存フォルダ
 
 # フォルダの存在確認
