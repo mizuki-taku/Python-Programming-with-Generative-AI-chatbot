@@ -110,34 +110,39 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
 
+# セッション状態でバナーの表示・非表示を管理するフラグを初期化
+if "welcome_hidden" not in st.session_state:
+    st.session_state.welcome_hidden = False
 
+# --- 1. 過去のチャット履歴を画面に表示する ---
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
-
-# 学生情報を画面に表示（デバッグ用）
-if "student_info_shown" not in st.session_state:
-    st.session_state["student_info_shown"] = True
+# --- 2. ユーザー情報（送信ボタンが押されるまで表示） ---
+if not st.session_state.welcome_hidden:
     st.info(f"ようこそ {student_name} さん (学籍番号: {student_id})")
+
+# --- 3. ユーザー入力エリア（フォーム） ---
+with st.form(key='chat_form', clear_on_submit=True):
+    query = st.text_area("質問を入力してください（Ctrl + Enterで送信）:", key="user_input_area")
+    submit_button = st.form_submit_button("送信")
+
+# --- 4. 応答処理 ---
+if submit_button and query:
+    # 送信された瞬間にフラグをTrueにする
+    st.session_state.welcome_hidden = True
     
-# ユーザー入力
-query = st.chat_input("質問を入力してください:")
-
-# 質問が入力された場合の応答処理
-if query:
     st.session_state.messages.append({"role": "user", "content": query})
-    with st.chat_message("user"):
-        st.write(query)
-
-    # ▼ 追加：当日＋昨日の履歴テキストを作成
+    
     response = search_index(
-    combined_index,
-    query,
-    history_pairs=st.session_state.messages[-20:]  # 直近10往復
+        combined_index,
+        query,
+        history_pairs=st.session_state.messages[-20:]
     )
 
-    with st.chat_message("assistant"):
-       st.markdown(response)
-
     st.session_state.messages.append({"role": "assistant", "content": response})
-
-    # ここでログを即時保存
     save_single_turn_to_sheet(query, response, student_id, student_name)
+    
+    # 画面を更新してバナーを消去
+    st.rerun()
