@@ -67,7 +67,7 @@ def fetch_recent_history_text(student_id: str, limit: int = 10) -> list:
     return pairs[::-1]
 
 # Streamlitのヘッダー
-st.title("質問応答チャットボット（情報システム実験）")
+st.title("質問応答チャットボット（情報ネットワーク工学）")
 
 # --- Moodleからパラメータ受け取り ---
 params = st.experimental_get_query_params()
