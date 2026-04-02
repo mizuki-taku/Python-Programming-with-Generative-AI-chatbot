@@ -1,0 +1,68 @@
+<p dir="ltr" style="text-align: left;"></p>Google Colab の始め方です．Colabを使うためにはGoogleアカウントが必要です．アカウントを持っていない場合は，Googleアカウントを取得します．<br>
+<p><br></p>
+<h4>■Google Colab にログインする</h4>
+<p>　Colabにはブラウザからログインします．</p>
+<p></p>
+<ol dir="ltr">
+    <li>以下のURLにアクセスします．<br>　　<a href="https://colab.research.google.com/?hl=ja" target="_blank">Colabへようこそ</a></li>
+    <li>右上のログインボタンをクリックして，ログインする．</li>
+</ol>
+<p>　Chromeを利用する場合は，先にChromeにログインしておくこともできます．</p>
+<h4><br></h4>
+<h4>■ノートブックを開く</h4>
+<h5>（方法１）新しいノートブックを開く<br></h5>
+<ol dir="ltr">
+    <li>「ファイル」→「ドライブの新しいノートブック」</li>
+</ol>
+<h5><br></h5>
+<h5>（方法２）Google Driveに保存されたノートブックを開く</h5>
+<ol>
+    <li>「ファイル」→「ノートブックを開く」→ノートブックを選択</li>
+</ol>
+<h5><br></h5>
+<h5>（方法３）ローカルPCに保存されているノートブックを開く</h5>
+<p>　ローカルPCに保存されているノートブックを利用するには，ノートブックをアップロードします．アップロードされたノートブックは，Google Driveに保存されます．<br></p>
+<ol>
+    <li>「ファイル」→「ノートブックをアップロード」</li>
+</ol>
+<h5><br></h5>
+<h4>■ノートブックを保存する</h4>
+<p>&nbsp;　ノートブックは適当なタイミングでオートセーブされます．保存先はGoogle Driveです．</p>
+<h5>（方法１）Google Driveに保存する</h5>
+<ol>
+    <li>Ctrl＋s または 「ファイル」→「保存」</li>
+</ol>
+<p>　　「<u>すべての変更を保存しました</u>」と表示されている場合は，オートセーブ済みですので，明示的に保存する必要はありません．</p>
+<p><br></p>
+<h5>（方法２）ノートブックをローカルPCにダウンロードする</h5>
+<ol>
+    <li>「ファイル」→「ダウンロード」</li>
+</ol>ダウンロード可能な形式は，ノートブック形式(.ipynb)またはPython形式(.py)を選ぶことができます．<p></p>
+<p><span style="font-size: 1.17188rem; font-weight: 700;"><br></span></p>
+<p><span style="font-size: 1.17188rem; font-weight: 700;"></span></p>
+<h4>■ノートブックを閉じる</h4>
+<p>　ノートブックを閉じるには，Colabのタブを閉じます．</p><br>
+<h4>■コードの入力と実行</h4>
+<p></p>
+<p></p>
+<h5>（１）コードの入力</h5>
+<p>　Colabでは，コードやテキストを記述できる「セル」によって構成されています．セルは，「＋コード」ボタン，「＋テキスト」ボタンで挿入できます．<br></p>
+<p></p>　コードを記述するセルを「コードセル」，テキストを記述するセルを「テキストセル」と呼びます．　コードセルにPythonのコードを書きます．<br>
+<p></p>
+<p><img src="https://www.cs.is.saga-u.ac.jp/lecture/moodle41/draftfile.php/28/user/draft/464496956/colab-cell-empty.png" alt="コードセル" width="516" height="46" class="img-fluid atto_image_button_text-bottom"></p>
+<p>　テキストセルは，ノートブックの説明や見出しなどのノートを記述できます．Markdownフォーマットで記述します．　</p>
+<h5><br></h5>
+<h5>（２）コードの実行<br></h5>
+<ol>
+    <li>実行するセルを選択して，Ctrl＋Enterまたはプレイボタンを押す</li>
+    <li>コードが実行され，結果がセルの下に表示されます．</li>
+</ol>
+<p><img src="https://www.cs.is.saga-u.ac.jp/lecture/moodle41/draftfile.php/28/user/draft/464496956/%E3%82%BB%E3%83%AB%E3%81%AE%E5%AE%9F%E8%A1%8C.png" alt="セルの実行" width="474" height="69" class="img-fluid atto_image_button_text-bottom"><br></p>
+<h5><br></h5>
+<h5>（３）コードの実行が終了しないとき</h5>
+<ol>
+    <li>コードが実行しないときは，ストップボタンをクリックします．</li>
+</ol>
+<p><img src="https://www.cs.is.saga-u.ac.jp/lecture/moodle41/draftfile.php/28/user/draft/464496956/colab-cell-Loop.png?time=1727247434378" alt="実行の中断" width="473" height="106" class="img-fluid atto_image_button_text-bottom"><br></p>
+<p><br></p><br>
+<p></p>

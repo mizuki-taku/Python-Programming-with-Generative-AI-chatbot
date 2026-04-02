@@ -1,0 +1,15 @@
+<a href="https://research.google.com/colaboratory/faq.html" target="_blank"></a>
+<p dir="ltr" style="text-align: left;"></p>
+<p>Colab（Google Colaboratory）は，ブラウザ上で実行可能なPython プログラミング環境です．Colabには以下の特徴があります． </p>
+<ul>
+    <li>環境構築が不要</li>
+    <li>GPU に料金なしでアクセス</li>
+    <li>簡単に共有</li>
+</ul>
+<p>Colabは，ノートブックというコードを記述して実行できるインタラクティブな環境を提供します．プログラムはコードセルと呼ばれる枠の中にし，セルごとに実行することができます．<br><br>コードは各アカウント専用の仮想マシンで実行されます．一定時間(90分)アイドル状態にある仮想マシンは削除されます．また，仮想マシンにはColab
+    のサービスで定められた最大存続時間（12時間）があります．ただしColabノートブックはGoogleドライブに保存されます．<br></p>
+<p>ノートブックは，Google Driveに保存されます．ノートブックは，.ipynb形式でダウンロードすることができ，Jupter Notebookでも利用することが可能です．</p>
+<p>参考<br><a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://colab.research.google.com/%3Fhl%3Dja&amp;ved=2ahUKEwj_zpKykdGIAxW6sVYBHeK-IdkQFnoECBQQAQ&amp;usg=AOvVaw0r1g8FcQzENCCuUoPeClXO" target="_blank">Colabへようこそ</a>　google<br><a href="https://research.google.com/colaboratory/faq.html" target="_blank">よくある質問</a><br></p>
+<ul>
+</ul><br>
+<p></p>

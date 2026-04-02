@@ -1,0 +1,22 @@
+<h5><span style="font-size: 1.17188rem;">■教材のオープン</span></h5>
+<p dir="ltr" style="text-align: left;">　教材のインデックスページで開いたノートブックには編集権限がありません．実行した結果を保存できないので，ドライブにコピーしたものを使って演習を進めます．<br></p>
+<ol dir="ltr">
+    <li style="text-align: left;">教材「Pythonプログラミング入門（Colab版）」をクリック</li>
+    <li style="text-align: left;">教材ノートブックの学習するセクションのリンクをクリック</li>
+    <li style="text-align: left;">「ドライブにコピー」をクリック<br></li>
+    <li style="text-align: left;">コピー元のノートブックのタブを閉じます．</li>
+    <li style="text-align: left;">ノートブックの名前を「〇〇.ipynbのコピー」から「〇〇.ipynb」に変更します．ダウンロードの際など，拡張子を.ipynbにすると都合がよいです．</li>
+</ol>
+<p>　一度学習したセクションを再度学習する場合は，Google Driveにコピーを作成したノートブックを開きます．前回の学習の続きから始めることができます．<br></p><br>
+<h5>■教材の利用<br></h5>
+<ol dir="ltr">
+    <li style="text-align: left;">テキストの説明に従いながら，コードセルへの入力，実行を確認します．</li>
+    <li style="text-align: left;">どうしてそうなるのかを考えながら，確認していきましょう．</li>
+    <li style="text-align: left;">エラーが生じた場合は，どうしてエラーとなったのかを考えましょう．エラーの解説に生成AIを利用することも有効です．</li>
+    <li style="text-align: left;">コードセル，テキストセルは適宜追加してかまいません．コードを修正したり，新しいコードを入力して試してみましょう．また，気づいた点などをテキストセルに残しておくと復習に利用できます．</li>
+</ol><br>
+<h5>■終了</h5>
+<ol>
+    <li>ノートブックを保存します．</li>
+    <li>タブを閉じます．</li>
+</ol>
