@@ -67,7 +67,7 @@ def fetch_recent_history_text(student_id: str, limit: int = 10) -> list:
     return pairs[::-1]
 
 # Streamlitのヘッダー
-st.title("質問応答チャットボット（情報ネットワーク工学）")
+st.title("質問応答チャットボット（自主演習）")
 
 # --- Moodleからパラメータ受け取り ---
 params = st.experimental_get_query_params()
@@ -93,8 +93,8 @@ if "messages" not in st.session_state:
         })
 
 # フォルダのパス
-lecture_folder = "./information-network-engineering"  # 講義資料フォルダ
-example_folder = "./information-network-engineering-example"     # 回答例フォルダ
+lecture_folder = "./Python-Programming-with-Generative-AI"  # 講義資料フォルダ
+example_folder = "./Python-Programming-with-Generative-AI-example"     # 回答例フォルダ
 log_folder = "./logs"             # 会話ログ保存フォルダ"./logs"
 
 folders_to_load = [lecture_folder]
