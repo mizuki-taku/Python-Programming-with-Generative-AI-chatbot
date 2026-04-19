@@ -4,7 +4,7 @@ from docx import Document as DocxDocument
 
 def load_docx(docx_path):
     docx = DocxDocument(docx_path)
-    content = "\n".join([para.text for para in docx.paragraphs])
+    content = "\n".join([p.text for p in docx.paragraphs if p.text.strip()])
     return [Document(page_content=content, metadata={"source": docx_path})]  # ← 修正！
 
 def load_pdf(pdf_path):
