@@ -11,11 +11,11 @@ load_dotenv()
 
 # 環境変数からAPIキー、モデル、温度を取得
 openai.api_key = os.getenv("OPENAI_API_KEY")
-OPENAI_API_MODEL = os.getenv("OPENAI_API_MODEL")
-OPENAI_API_TEMPERATURE = float(os.getenv("OPENAI_API_TEMPERATURE"))
-OPENAI_API_MAX_TOKENS = int(os.getenv("OPENAI_API_MAX_TOKENS"))
-OPENAI_API_TOP_K = int(os.getenv("OPENAI_API_TOP_K"))
-EMBEDDING_MODEL_NAME = os.getenv("OPENAI_EMBEDDING_MODEL")
+OPENAI_API_TEMPERATURE  = float(os.getenv("OPENAI_API_TEMPERATURE", "0.7"))
+OPENAI_API_MAX_TOKENS   = int(os.getenv("OPENAI_API_MAX_TOKENS",   "1000"))
+OPENAI_API_TOP_K        = int(os.getenv("OPENAI_API_TOP_K",        "3"))
+EMBEDDING_MODEL_NAME    = os.getenv("OPENAI_EMBEDDING_MODEL",      "text-embedding-3-small")
+OPENAI_API_MODEL        = os.getenv("OPENAI_API_MODEL",            "gpt-4o")
 
 # 埋め込みとインデックス作成
 def create_faiss_index(texts):
@@ -109,16 +109,21 @@ def search_index(faiss_index, query, history_pairs=None):
     return response.choices[0].message.content
 
 
-# フォルダ内のすべてのPDFおよびテキストファイルを読み込んでインデックスを作成
 def load_and_index_folder(folder_path, return_documents=False):
     all_texts = []
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
+
+        # ✅ 追加：空ファイルをスキップ
+        if os.path.getsize(file_path) == 0:
+            print(f"スキップ（空ファイル）: {filename}")
+            continue
+
         if filename.endswith(".pdf"):
             documents = load_pdf(file_path)
         elif filename.endswith(".txt"):
             documents = load_text(file_path)
-        elif filename.endswith(".docx"):  # Wordファイル対応
+        elif filename.endswith(".docx"):
             documents = load_docx(file_path)
         else:
             continue
@@ -126,9 +131,7 @@ def load_and_index_folder(folder_path, return_documents=False):
         texts = split_text(documents)
         all_texts.extend(texts)
 
-    # return_documentsがTrueの場合、ドキュメントのリストを返す
     if return_documents:
         return all_texts
-    # デフォルトではインデックスを返す
     return create_faiss_index(all_texts)
 
