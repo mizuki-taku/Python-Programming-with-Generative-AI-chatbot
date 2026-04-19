@@ -15,6 +15,7 @@ from faiss_indexer import load_and_index_folder, search_index, create_faiss_inde
 load_dotenv()
 
 # インデックスの作成
+@st.cache_resource
 def load_and_index_multiple_folders(folders):
     all_texts = []
     for folder in folders:
@@ -70,9 +71,9 @@ def fetch_recent_history_text(student_id: str, limit: int = 10) -> list:
 st.title("質問応答チャットボット（自主演習）")
 
 # --- Moodleからパラメータ受け取り ---
-params = st.experimental_get_query_params()
-student_id = params.get("student_id", [None])[0]
-student_name= params.get("student_name", [None])[0]
+params = st.query_params
+student_id   = st.query_params.get("student_id",   "anonymous")
+student_name = st.query_params.get("student_name", "不明")
 
 # セッションステートでメッセージの履歴を保持
 if "messages" not in st.session_state:
@@ -92,7 +93,7 @@ if "messages" not in st.session_state:
             "content": item["response"]
         })
 
-# フォルダのパス
+# --- フォルダの読み込み処理（変更なし） ---
 lecture_folder = "./Python-Programming-with-Generative-AI"  # 講義資料フォルダ
 example_folder = "./Python-Programming-with-Generative-AI-example"     # 回答例フォルダ
 log_folder = "./logs"             # 会話ログ保存フォルダ"./logs"
@@ -101,8 +102,8 @@ folders_to_load = [lecture_folder]
 if os.path.exists(example_folder):
     folders_to_load.append(example_folder)
 
-# フォルダをまとめて読み込み＆インデックス化
-combined_index = load_and_index_multiple_folders(folders_to_load)
+# リスト → タプルに変換してから渡す
+combined_index = load_and_index_multiple_folders(tuple(folders_to_load))
 
 # セッション状態でバナーの表示・非表示を管理するフラグを初期化
 if "welcome_hidden" not in st.session_state:
