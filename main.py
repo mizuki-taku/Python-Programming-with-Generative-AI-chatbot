@@ -104,12 +104,6 @@ if os.path.exists(example_folder):
 # フォルダをまとめて読み込み＆インデックス化
 combined_index = load_and_index_multiple_folders(folders_to_load)
 
-# --- 既存のメッセージをブラウザ上に表示 ---
-# これにより、読み込まれた履歴がチャットUIとして再現されます
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.write(message["content"])
-
 # セッション状態でバナーの表示・非表示を管理するフラグを初期化
 if "welcome_hidden" not in st.session_state:
     st.session_state.welcome_hidden = False
